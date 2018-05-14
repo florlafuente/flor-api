@@ -4,6 +4,7 @@
   "description": "API for personal use",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "npm run test"
   },
   "repository": {
