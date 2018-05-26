@@ -13,7 +13,7 @@ const {
 } = process.env
 
 
-router.post('/', (req, res) => {
+router.post('/', (req, res, next) => {
   let transporter = nodemailer.createTransport({
     host: SMTP_HOST,
     port: SMTP_PORT,
@@ -27,7 +27,7 @@ router.post('/', (req, res) => {
     to: SMTP_TO_ADDRESS,
     from: SMTP_FROM_ADDRESS,
     subject: 'Contacto',
-    html: `<div><p>Hola! Te enviaron un mensaje a tu pagina con la siguiente data:<br /> Nombre: ${req.body.nombre} <br /> E-mail: ${req.body.email} <br /> Message: ${req.body.message}</p><div>`
+    html: `<div><p>Hola! Te enviaron un mensaje a tu pagina con la siguiente data:<br /> Nombre: ${req.body.name} <br /> E-mail: ${req.body.email} <br /> Message: ${req.body.message}</p><div>`
   }
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) res.status(500).send()
