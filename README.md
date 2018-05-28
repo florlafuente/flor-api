@@ -2,7 +2,7 @@
 
 This is a very common API made by Flor for personal uses and examples.
 
-`/mailer` endpoint sends an e-mail to a setted addres with a name, a email and a message.
+`/mailer` endpoint sends an e-mail to a setted address containing a message with the name and email of the author.
 You need to create a `.env` file with the following keys =
 * PORT
 * SMTP_HOST
