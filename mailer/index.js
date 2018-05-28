@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const nodemailer = require('nodemailer')
+const cors = require('cors')
 // Require enviroment variables
 require('dotenv').config()
 const {
@@ -12,6 +13,7 @@ const {
   SMTP_TO_ADDRESS
 } = process.env
 
+router.use(cors())
 
 router.post('/', (req, res, next) => {
   let transporter = nodemailer.createTransport({
