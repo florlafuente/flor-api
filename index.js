@@ -5,7 +5,6 @@ const mailer = require('./mailer')
 require('dotenv').config()
 const port = process.env.PORT
 
-app.use(express.json())
 app.use('/mailer', mailer)
 
 app.listen(port, (err) => {

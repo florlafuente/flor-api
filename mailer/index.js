@@ -14,6 +14,7 @@ const {
 } = process.env
 
 router.use(cors())
+router.use(express.json())
 
 router.post('/', (req, res, next) => {
   let transporter = nodemailer.createTransport({
